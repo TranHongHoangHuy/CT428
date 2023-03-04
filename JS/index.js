@@ -1,4 +1,4 @@
-alert("file còn sống!!!!!!!!!!");
+// alert("file còn sống!!!!!!!!!!");
 
 const b = document.querySelector(".product_detail_b");
 const parent = b.parentElement;
