@@ -1,41 +1,35 @@
 <?php
+include '../PHP/conn.php';
 require '../PHP/header.php';
 
-if (isset($_POST['submit'])) {
+// Kiểm tra xem người dùng đã ấn nút đăng ký hay chưa
+if (isset($_POST['register'])) {
+    // Lấy dữ liệu từ form
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (empty($username) || empty($password)) {
-        echo "Please enter your username and password";
-        exit();
+    // Kiểm tra xem username đã được sử dụng hay chưa
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM user WHERE username = ?');
+    $stmt->execute([$username]);
+
+    if ($stmt->fetchColumn() > 0) {
+        // Username đã được sử dụng, hiển thị thông báo lỗi
+        echo 'Username already exists.';
     } else {
-        $sql = "SELECT username FROM users WHERE username = ?";
-        $stmt = mysqli_stmt_init($conn);
-        // chưa xong
+        // Thêm người dùng vào CSDL
+        $stmt = $pdo->prepare('INSERT INTO user (username, password) VALUES (?, ?)');
+        $stmt->execute([$username, $password]);
+
+        // Đăng ký thành công, chuyển hướng đến trang đăng nhập
+        header('Location: login.php');
+        exit;
     }
 }
 
 
-
-
-
-// try {
-//     //chuẩn bị sql
-//     $stmt = $pdo->prepare('Insert into user (username, password) values (:username, :password)');
-//     $stmt->bindParam(':username', $_REQUEST['username']);
-//     $stmt->bindParam(':password', $_REQUEST['password']);
-//     $stmt->execute();
-//     echo 'Đã thêm user ';
-// } catch (PDOException $e) {
-//     die("Error:Không thể thực thi " . $e->getMessage());
-// }
-// //connect close
-// unset($pdo);
-
-
-
-
 ?>
+
+
 <form method="post" action="signup.php">
     <div class="card_lgi_container">
         <div class="card_lgi">
@@ -49,7 +43,7 @@ if (isset($_POST['submit'])) {
                 <input type="password" required="required" name="password" value="" id="password">
                 <span>Password</span>
             </div>
-            <button class="card_lgi_enter" type="submit">Enter</button>
+            <button class="card_lgi_enter" type="submit" name="register" value="Register">Enter</button>
         </div>
     </div>
 </form>

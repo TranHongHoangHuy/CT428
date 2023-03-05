@@ -1,32 +1,38 @@
 <?php
-require '../PHP/header.php';
 
-session_start();
-if (isset($_SESSION['username'])) {
-    header("Location: ../mac.php");
-    exit();
-}
+include '../PHP/conn.php';
+
+require '../PHP/header.php';
 
 // Xử lý form đăng nhập
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Lấy giá trị nhập từ form
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Tìm người dùng có username và password tương ứng trong database
-    $stmt = $pdo->prepare('SELECT * FROM user WHERE username = :username AND password = :password');
-    $stmt->execute(['username' => $username, 'password' => $password]);
-    $user = $stmt->fetch();
+    // Truy vấn bảng user để kiểm tra thông tin đăng nhập
+    $stmt = $pdo->prepare("SELECT COUNT(*) FROM user WHERE username = ? AND password = ?");
+    $stmt->execute([$username, $password]);
+    $count = $stmt->fetchColumn();
 
-    if ($user) {
-        // Nếu tìm thấy người dùng, hiển thị thông báo đăng nhập thành công
-        echo '<script>alert("Bạn đã đăng nhập thành công!");</script>';
-        // header("Location:../mac.php");
+    if ($count > 0) {
+        // Lưu session nếu thông tin đăng nhập đúng
+        $_SESSION['username'] = $username;
+
+        // Chuyển hướng đến trang mac
+        header('Location: ../PHP/mac.php');
         exit;
     } else {
-        // Nếu không tìm thấy người dùng, hiển thị thông báo lỗi
-        echo '<script>alert("Tên đăng nhập hoặc mật khẩu không đúng!");</script>';
+        // Hiển thị thông báo nếu thông tin đăng nhập sai
+        echo "<script>alert('Bạn đã nhập sai thông tin đăng nhập');</script>";
     }
 }
+// Hiển thị tên đăng nhập nếu đã lưu session
+if (isset($_SESSION['username'])) {
+    echo "Xin chào, " . $_SESSION['username'] . "!";
+}
+
+
 ?>
 
 <form method="post" action="login.php">
@@ -37,7 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="text" id="username" required="required" name="username">
                 <span class="user">Username</span>
             </div>
-
             <div class="card_lgi_inputBox">
                 <input type="password" required="required" id="password" name="password">
                 <span>Password</span>
@@ -46,10 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button class="card_lgi_enter" type="submit">Enter</button>
                 <button class="card_lgi_enter"><a href="../PHP/signup.php">Sign up</a></button>
             </div>
-
         </div>
     </div>
 </form>
-
 
 <?php include '../PHP/footer.php'; ?>

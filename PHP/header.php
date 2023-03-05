@@ -1,21 +1,3 @@
-<?php
-
-// Thông tin kết nối cơ sở dữ liệu
-$host = 'localhost';
-$dbname = 'webshop';
-$usernamedb = 'root';
-$passworddb = '';
-
-// Tạo kết nối PDO
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $usernamedb, $passworddb);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Kết nối đến cơ sở dữ liệu $dbname thất bại: " . $e->getMessage();
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +44,14 @@ try {
         </div>
         <div class="head-search">
             <ul>
-                <li><a href="../PHP/login.php"><i class="fa-solid fa-user"></i></a></li>
+                <?php
+                session_start();
+                if (isset($_SESSION['username'])) { // Kiểm tra session
+                    echo '<li><a href="../PHP/logout.php"><i class="fa-solid fa-sign-out"></i></a></li>';
+                } else {
+                    echo '<li><a href="../PHP/login.php"><i class="fa-solid fa-user"></i></a></li>';
+                }
+                ?>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
                 <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
             </ul>

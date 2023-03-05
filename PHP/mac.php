@@ -1,12 +1,13 @@
 <?php
+include '../PHP/conn.php';
 require '../PHP/header.php';
-session_start();
-if (isset($_SESSION['username'])) {
-    header("Location: ../login.php");
-    exit();
-}
-?>
+include '../PHP/check_login.php';
 
+// if (!isset($_SESSION['username'])) {
+//     header("Location: ../login.php");
+//     exit();
+// }
+?>
 
 
 <main>
