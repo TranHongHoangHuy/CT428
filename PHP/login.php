@@ -19,20 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Lưu session nếu thông tin đăng nhập đúng
         $_SESSION['username'] = $username;
 
-        // Chuyển hướng đến trang mac
-        header('Location: ../PHP/mac.php');
-        exit;
+        // Chuyển hướng đến trang index
+        header('Location: ../PHP/index.php');
+        // exit;
     } else {
         // Hiển thị thông báo nếu thông tin đăng nhập sai
         echo "<script>alert('Bạn đã nhập sai thông tin đăng nhập');</script>";
     }
 }
-// Hiển thị tên đăng nhập nếu đã lưu session
-if (isset($_SESSION['username'])) {
-    echo "Xin chào, " . $_SESSION['username'] . "!";
-}
-
-
 ?>
 
 <form method="post" action="login.php">

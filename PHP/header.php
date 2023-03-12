@@ -35,7 +35,7 @@
         </div>
         <div class="head-menu">
             <ul>
-                <li><a href="../PHP/mac.php">Mac</a></li>
+                <li><a href="../PHP/index.php">Mac</a></li>
                 <li><a href="music.html">Âm thanh</a></li>
                 <li><a href="#">Phụ kiện</a></li>
                 <li><a href="../PHP/care.php">BotCare</a></li>
@@ -53,7 +53,7 @@
                 }
                 ?>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
+                <li><a href="../PHP/shopping.php"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
             </ul>
         </div>
     </header>
