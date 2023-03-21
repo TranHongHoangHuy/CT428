@@ -13,7 +13,6 @@
     </div>
 </footer>
 
-
 <script>
     const scrollToTopButton = document.getElementById("scroll-to-top");
 
