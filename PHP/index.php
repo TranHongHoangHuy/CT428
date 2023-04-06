@@ -309,6 +309,7 @@ require '../PHP/header.php';
 
         var info = [src, title, body, price];
 
+
         // Kiểm tra trùng lặp
         var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
         var isDuplicate = false;
