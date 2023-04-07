@@ -2,6 +2,45 @@
 include '../PHP/conn.php';
 require '../PHP/header.php';
 
+// Kiểm tra xem người dùng đã ấn nút đăng ký hay chưa
+if (isset($_POST['submit'])) {
+    // Lấy dữ liệu từ form
+    $username = $_POST['name'];
+    $password = $_POST['phone'];
+    $address = $_POST['address'];
+    $phone_number = $_POST['phone'];
+
+    // Kiểm tra xem username đã được sử dụng hay chưa
+    $stmt = $pdo->prepare('SELECT COUNT(*) FROM user WHERE username = ?');
+    $stmt->execute([$username]);
+
+    if ($stmt->fetchColumn() > 0) {
+        // Username đã được sử dụng, đưa thông tin sản phẩm vào bảng order
+        echo 'Username already exists.';
+    } else {
+        // Thêm người dùng vào CSDL
+        $stmt = $pdo->prepare('INSERT INTO user (username, password, address, phone) VALUES (?, ?, ?, ?)');
+        $stmt->execute([$username, $password, $address, $phone_number]);
+
+        //đưa thông tin sản phẩm vào bảng order
+
+        // ấn submit thành công, hiện modal
+        echo '<div class="modal" id="successModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thông báo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn đã đặt hàng thành công
+                </div>
+            </div>
+        </div>
+    </div>';
+    }
+}
+
 ?>
 <div class="shop-title text-center m-5">
     <h1>Giỏ hàng</h1>
@@ -41,7 +80,7 @@ require '../PHP/header.php';
             <textarea id="note" name="note" class="form-control" placeholder="Ghi chú"></textarea>
         </div>
         <div class="form-group m-4">
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Mua hàng</button>
+            <button type="submit" name="submit" class="btn btn-primary" style="width: 100%;">Mua hàng</button>
         </div>
     </form>
 
@@ -152,7 +191,16 @@ require '../PHP/header.php';
     }
 
     loadCart();
+
+    //after submit, show the modal and delete locaStorage
+    $(document).ready(function() {
+        $('#successModal').modal('show');
+
+        // delete all localStorage
+        localStorage.clear();
+    });
 </script>
+
 
 <?php
 include '../PHP/footer.php';
