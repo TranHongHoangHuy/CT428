@@ -1,6 +1,9 @@
 <?php
 include '../PHP/conn.php';
 require '../PHP/header.php';
+
+$id_product = $_GET['id_product'];
+
 ?>
 <main>
     <div class="top">
