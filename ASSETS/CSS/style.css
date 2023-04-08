@@ -124,6 +124,11 @@ main {
 
 .card-info {
   padding-top: 10%;
+  min-height: 150px;
+}
+
+.card-info .text-title {
+  min-height: 60px;
 }
 
 /* .card-button i {

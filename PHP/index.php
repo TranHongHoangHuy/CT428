@@ -7,6 +7,7 @@ require '../PHP/header.php';
 //     header("Location: ../login.php");
 //     exit();
 // }
+$products = $pdo->query("SELECT * FROM product WHERE id_catalog = 1")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -41,223 +42,25 @@ require '../PHP/header.php';
         <!-- Product -->
         <div class="text-center">
             <div id="gallery" class="row">
-                <!-- Product 1 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product ">
-                    <a href="../PHP/product.php">
-                        <div class="card-img">
-                            <img src="../ASSETS/IMG/front/macbook-air-m1-2020-8-core-gpu-gold-thumb-650x650.jpg" alt="">
+                <?php foreach ($products as $product) { ?>
+                    <div class="col-lg-4 col-md-6 col-sm-12 card product">
+                        <a href="product.php?id_product=<?php echo $product['id_product']; ?>">
+                            <div class="card-img">
+                                <img src="<?php echo $product['image_link']; ?>" alt="">
+                            </div>
+                        </a>
+                        <div class="card-info">
+                            <p class="text-title"><?php echo $product['productName']; ?></p>
+                            <p class="text-body"><?php echo $product['productOption']; ?></p>
                         </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M1 2020 </p>
-                        <p class="text-body">8GB-256GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$1000</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/macbook-air-m1-2020-silver-thumb-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M1 2020 </p>
-                        <p class="text-body">8GB-256GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$1000</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
+                        <div class="card-footer">
+                            <span class="text-title"><?php echo $product['price']; ?></span>
+                            <div class="card-button" onclick="getInfo(this)">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/macbook-air-m1-2020-gold-thumb-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M1 2020 </p>
-                        <p class="text-body">16GB-256GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$1500</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/apple-macbook-air-m2-2022-10-core-gpu-xam-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M1 2020 </p>
-                        <p class="text-body">16GB-512GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$2000</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/apple-macbook-air-m2-2022-10-core-gpu-xam-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M2</p>
-                        <p class="text-body">8GB-256GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/apple-macbook-air-m2-2022-10-core-gpu-xam-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M2 </p>
-                        <p class="text-body">8GB-512GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Product 7 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/apple-macbook-air-m2-2022-16gb-xanh-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M2</p>
-                        <p class="text-body">16GB-25GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 8 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/macbook-air-m2-2022-8-core-gpu-xám-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook air M2 </p>
-                        <p class="text-body">16GB-512GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 9 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/macbook-pro-13-spgry-m1-thumb-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook pro M1 13 inch </p>
-                        <p class="text-body">8GB-256GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 10 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/macbook-pro-13-spgry-m1-thumb-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook pro M1 13 inch </p>
-                        <p class="text-body">16GB-512GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 11 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/apple-macbook-pro-14-m1-pro-2021-bac-thumb-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook pro M1 Max 14 inch </p>
-                        <p class="text-body">32GB-512GB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 12 -->
-                <div class="col-lg-4 col-md-6 col-sm-12 card product">
-                    <a href="">
-                        <div class="card-img"><img src="../ASSETS/IMG/front/macbook-pro-16-m1-max-2021-bac-650x650.jpg" alt="">
-                        </div>
-                    </a>
-                    <div class="card-info">
-                        <p class="text-title">MacBook pro M1 Max 16 inch </p>
-                        <p class="text-body">32GB-1TB</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                        <div class="card-button" onclick="getInfo(this)">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
