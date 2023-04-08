@@ -4,6 +4,30 @@ require '../PHP/header.php';
 
 $id_product = $_GET['id_product'];
 
+// Lấy thông tin sản phẩm từ bảng product
+$stmt = $pdo->prepare('SELECT * FROM product WHERE id_product = :id_product');
+$stmt->bindParam(':id_product', $id_product);
+$stmt->execute();
+$product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+// Lấy danh sách hình ảnh từ bảng img_list
+$stmt = $pdo->prepare('SELECT * FROM img_list WHERE id_product = :id_product');
+$stmt->bindParam(':id_product', $id_product);
+$stmt->execute();
+$img_list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Lấy danh sách hình ảnh từ bảng img_info
+$stmt = $pdo->prepare('SELECT * FROM img_info WHERE id_product = :id_product');
+$stmt->bindParam(':id_product', $id_product);
+$stmt->execute();
+$img_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Đưa thông tin sản phẩm và danh sách hình ảnh vào một mảng
+// $data = array(
+//     'product' => $product,
+//     'img_list' => $img_list
+// );
+
 ?>
 <main>
     <div class="top">
@@ -12,7 +36,12 @@ $id_product = $_GET['id_product'];
                 <div class="col-lg-6 product_detail_a">
                     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active" data-bs-interval="5000">
+                            <?php foreach ($img_list as $key => $img) : ?>
+                                <div class="carousel-item<?php if ($key === 0) echo ' active'; ?>">
+                                    <img src="<?php echo $img['url']; ?>" class="d-block w-100" alt="">
+                                </div>
+                            <?php endforeach; ?>
+                            <!-- <div class="carousel-item active" data-bs-interval="5000">
                                 <img src="../ASSETS/IMG/back/mac_air_M1_16_256/macbook-air-m1-2020-8-core-gpu-gold-thumb-650x650.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
@@ -29,7 +58,7 @@ $id_product = $_GET['id_product'];
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
                                 <img src="../ASSETS/IMG/back/mac_air_M1_16_256/macbook-air-m1-2020-8-core-gpu-vang-05-650x650.jpg" class="d-block w-100" alt="...">
-                            </div>
+                            </div> -->
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -43,11 +72,16 @@ $id_product = $_GET['id_product'];
 
                 </div>
                 <div class="col-lg-6 product_detail_b">
-                    <h1 class="name" style="color: #fff;">
+                    <!-- <h1 class="name" style="color: #fff;">
                         Macbook air M1 2020 8 core GPU
                     </h1>
                     <h2 class="price">19.790.900đ</h2>
-                    <button class="btn btn-dark info">Ram 8GB-SSD 256 GB</button>
+                    <button class="btn btn-dark info">Ram 8GB-SSD 256 GB</button> -->
+                    <h1 class="name" style="color: #fff;">
+                        <?php echo $product['productName']; ?>
+                    </h1>
+                    <h2 class="price"><?php echo number_format($product['price'], 0, '.', '.'); ?>đ</h2>
+                    <button class="btn btn-dark info"><?php echo $product['productOption']; ?></button>
 
                     <div class="card">
                         <div class="card-header">

@@ -54,7 +54,7 @@ $products = $pdo->query("SELECT * FROM product WHERE id_catalog = 1")->fetchAll(
                             <p class="text-body"><?php echo $product['productOption']; ?></p>
                         </div>
                         <div class="card-footer">
-                            <span class="text-title"><?php echo $product['price']; ?></span>
+                            <span class="text-title"><?php echo number_format($product['price'], 0, '.', '.'); ?>đ</span>
                             <div class="card-button" onclick="getInfo(this)">
                                 <i class="fa-solid fa-cart-shopping"></i>
                             </div>

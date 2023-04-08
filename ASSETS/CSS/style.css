@@ -568,6 +568,10 @@ td button {
   background-color: white;
   border-radius: 5px;
 }
+td img {
+  width: auto;
+  height: 300px;
+}
 
 #total-amount {
   padding: 8px;
