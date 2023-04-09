@@ -7,12 +7,12 @@ if (isset($_POST['submit'])) {
     $productName = $_POST['productName'];
     $productOption = $_POST['productOption'];
     $price = $_POST['price'];
-    $discout = $_POST['discout'];
+    $discount = $_POST['discount'];
     $image_link = $_POST['image_link'];
     $content = $_POST['content'];
 
     // Chuẩn bị câu truy vấn SQL để thêm sản phẩm vào CSDL
-    $sql = "INSERT INTO `product` (`id_catalog`, `productName`, `productOption`, `price`, `discout`, `image_link`, `content`) VALUES (:id_catalog, :productName, :productOption, :price, :discout, :image_link, :content)";
+    $sql = "INSERT INTO `product` (`id_catalog`, `productName`, `productOption`, `price`, `discount`, `image_link`, `content`) VALUES (:id_catalog, :productName, :productOption, :price, :discount, :image_link, :content)";
     $stmt = $pdo->prepare($sql);
 
     // Thực hiện truy vấn SQL với thông tin sản phẩm vừa lấy từ form
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
         ':productName' => $productName,
         ':productOption' => $productOption,
         ':price' => $price,
-        ':discout' => $discout,
+        ':discount' => $discount,
         ':image_link' => $image_link,
         ':content' => $content
     ]);
@@ -91,8 +91,8 @@ $catalogs = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <input type="number" class="form-control" id="price" name="price" placeholder="Nhập giá sản phẩm" required>
             </div>
             <div class="form-group">
-                <label for="discout">Giảm giá sản phẩm:</label>
-                <input type="number" class="form-control" id="discout" name="discout" placeholder="Nhập giảm giá sản phẩm">
+                <label for="discount">Giảm giá sản phẩm:</label>
+                <input type="number" class="form-control" id="discount" name="discount" placeholder="Nhập giảm giá sản phẩm">
             </div>
             <div class="form-group">
                 <label for="image_link">Link ảnh sản phẩm:</label>

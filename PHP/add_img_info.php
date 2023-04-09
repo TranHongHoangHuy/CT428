@@ -55,7 +55,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
     <link href="../ASSETS/IMG/favicon.ico" rel="icon" type="image/x-icon" />
-    <title>Nhập img</title>
+    <title>Nhập img thông tin</title>
 </head>
 
 <body>
@@ -71,7 +71,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </select>
             </div>
             <div class="form-group">
-                <label for="url">Link ảnh sản phẩm:</label>
+                <label for="url">Link thông tin sản phẩm:</label>
                 <input type="text" class="form-control" id="url" name="url" placeholder="Nhập link ảnh sản phẩm" required>
             </div>
 

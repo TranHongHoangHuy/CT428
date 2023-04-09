@@ -20,7 +20,7 @@
       <h3>Hiển thị tất cả sản phẩm.</h3>
       <div class="row">
         <div class="col-sm-1">
-          <h3>STT:</h3>
+          <h5>STT</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
@@ -31,7 +31,7 @@ $result = $pdo->query($sql);
 ?>      
         </div>
         <div class="col-sm-3">
-          <h3>Tên sản phẩm:</h3>
+          <h5>Tên sản phẩm</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
@@ -42,7 +42,7 @@ $result = $pdo->query($sql);
 ?>      
         </div>
         <div class="col-sm-1">
-          <h3>Giá:</h3>
+          <h5>Giá</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
@@ -53,7 +53,7 @@ $result = $pdo->query($sql);
 ?>     
         </div>
         <div class="col-sm-1">
-          <h3>Loại:</h3>
+          <h5>Loại</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
@@ -64,18 +64,18 @@ $result = $pdo->query($sql);
 ?>      
         </div>
         <div class="col-sm-1">
-          <h3>Giảm:</h3>
+          <h5>Giảm</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "<br>" . $row['discout'];
+	echo "<br>" . $row['discount'];
 	} 
 ?>      
         </div>
         <div class="col-sm-1">
-          <h3>Ảnh:</h3>
+          <h5>Ảnh</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
@@ -86,7 +86,7 @@ $result = $pdo->query($sql);
 ?>      
         </div>
         <div class="col-sm-2">
-          <h3>Lựa chọn:</h3>
+          <h5>Lựa chọn</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
@@ -97,7 +97,7 @@ $result = $pdo->query($sql);
 ?>      
         </div>
         <div class="col-sm-2">
-          <h3>Ghi chú:</h3>
+          <h5>Ghi chú</h5>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
