@@ -40,7 +40,7 @@
             <ul>
                 <li><a href="../PHP/index.php">Mac</a></li>
                 <li><a href="music.html">Âm thanh</a></li>
-                <li><a href="#">Phụ kiện</a></li>
+                <li><a href="../PHP/index2.php">Phụ kiện</a></li>
                 <li><a href="../PHP/care.php">BotCare</a></li>
                 <li><a href="#">About</a></li>
             </ul>

@@ -1,6 +1,6 @@
 <?php require '../PHP/header.php';?>
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en-vi">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,82 +20,90 @@
       <h3>Hiển thị tất cả sản phẩm.</h3>
       <div class="row">
         <div class="col-sm-1">
+          <h3>STT:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "STT:<br>" . $row['id_product'] . "<br>";
+	echo "<br>" . $row['id_product'];
 	} 
 ?>      
         </div>
         <div class="col-sm-3">
+          <h3>Tên sản phẩm:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "Tên sản phẩm:<br>" . $row['productName'] . "<br>";
+	echo "<br>" . $row['productName'];
 	} 
 ?>      
         </div>
         <div class="col-sm-1">
+          <h3>Giá:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "Giá:<br>" . $row['price'] . "<br>";
+	echo "<br>" . $row['price'];
 	} 
 ?>     
         </div>
         <div class="col-sm-1">
+          <h3>Loại:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "Loại:<br>" . $row['id_product'] . "<br>";
+	echo "<br>" . $row['id_product'];
 	} 
 ?>      
         </div>
         <div class="col-sm-1">
+          <h3>Giảm:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "Giảm:<br>" . $row['discout'] . "<br>";
+	echo "<br>" . $row['discout'];
 	} 
 ?>      
         </div>
         <div class="col-sm-1">
+          <h3>Ảnh:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "Ảnh:<br>" . $row['image_link'] . "<br>";
+	echo "<br>" . $row['image_link'];
 	} 
 ?>      
         </div>
         <div class="col-sm-2">
+          <h3>Lựa chọn:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "Lựa chọn:<br>" . $row['productOption'] . "<br>";
+	echo "<br>" . $row['productOption'] ;
 	} 
 ?>      
         </div>
         <div class="col-sm-2">
+          <h3>Ghi chú:</h3>
 <?php
 include '../PHP/conn.php';
 $sql = "SELECT * FROM product";
 $result = $pdo->query($sql); 
 	while($row=$result->fetch()){
-	echo "ghi chú:<br>" . $row['content'] . "<br>";
+	echo "<br>" . $row['content'] . "<br>";
 	} 
 ?>      
         </div>
@@ -103,7 +111,9 @@ $result = $pdo->query($sql);
     </div>
     <div class="col-sm-4">
       <h3>Quản lý sản phẩm</h3>
+
 <?php include '../PHP/add_product.php';?>
+  
     </div>
   </div>
 </div>
