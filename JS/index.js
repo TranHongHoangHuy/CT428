@@ -12,3 +12,7 @@ b.addEventListener("scroll", function () {
     });
   }
 });
+
+$(document).ready(function () {
+  $("#example").DataTable();
+});

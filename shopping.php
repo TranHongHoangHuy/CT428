@@ -88,6 +88,41 @@ if (isset($_POST['submit'])) {
 </div>
 
 <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+
+    table tr td:nth-child(n + 2):nth-child(-n + 5) {
+        vertical-align: middle;
+    }
+
+    td button {
+        border-style: none;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    td img {
+        width: auto;
+        height: 300px;
+    }
+
+    #total-amount {
+        padding: 8px;
+        font-size: 25px;
+        font-weight: 400;
+    }
+
+    tr:last-child td:first-child {
+        font-size: 25px;
+        font-weight: 400;
+        text-align: left;
+    }
+
     .container {
         background: #fff;
         display: flex;

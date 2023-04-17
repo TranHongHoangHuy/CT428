@@ -73,33 +73,5 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar -->
-    <!-- <header>
-        <div class="head-name">
-            <a href="../index.php">BotZone</a>
-        </div>
-        <div class="head-menu">
-            <ul>
-                <li><a href="../index.php">Mac</a></li>
-                <li><a href="#">Âm thanh</a></li>
-                <li><a href="../phukien.php">Phụ kiện</a></li>
-                <li><a href="../care.php">BotCare</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </div>
-        <div class="head-search">
-            <ul>
-                <?php
-                session_start();
-                if (isset($_SESSION['username'])) { // Kiểm tra session
-                    echo '<li><a href="../PHP/logout.php"><i class="fa-solid fa-sign-out"></i></a></li>';
-                } else {
-                    echo '<li><a href="../login.php"><i class="fa-solid fa-user"></i></a></li>';
-                }
-                ?>
-                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href="../shopping.php"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
-            </ul>
-        </div>
-    </header> -->
+
     <button id="scroll-to-top"><i class="fa-solid fa-arrow-up"></i></button>

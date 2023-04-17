@@ -550,7 +550,7 @@ footer p {
 .specs-card a {
   width: 100%;
 }
-
+/* 
 table {
   border-collapse: collapse;
   width: 100%;
@@ -583,4 +583,4 @@ tr:last-child td:first-child {
   font-size: 25px;
   font-weight: 400;
   text-align: left;
-}
+} */

@@ -1,5 +1,5 @@
 <?php
-include './conn.php';
+include '../conn.php';
 // Nếu form đã submit, thực hiện lưu thông tin sản phẩm vào CSDL
 if (isset($_POST['submit'])) {
     // Lấy thông tin sản phẩm từ form
