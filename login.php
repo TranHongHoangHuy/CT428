@@ -1,8 +1,7 @@
 <?php
 
-include '../PHP/conn.php';
-
-require '../PHP/header.php';
+include './conn.php';
+require './PHP/header.php';
 
 // Xử lý form đăng nhập
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -20,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $username;
 
         // Chuyển hướng đến trang index
-        header('Location: ../PHP/index.php');
+        header('Location: ../index.php');
         // exit;
     } else {
         // Hiển thị thông báo nếu thông tin đăng nhập sai
@@ -43,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="card_lgi_button">
                 <button class="card_lgi_enter" type="submit">Enter</button>
-                <button class="card_lgi_enter"><a href="../PHP/signup.php">Sign up</a></button>
+                <button class="card_lgi_enter"><a href="../signup.php">Sign up</a></button>
             </div>
         </div>
     </div>
 </form>
 
-<?php include '../PHP/footer.php'; ?>
+<?php include './PHP/footer.php'; ?>

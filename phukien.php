@@ -1,13 +1,13 @@
 <?php
-include '../PHP/conn.php';
-require '../PHP/header.php';
+include './conn.php';
+require './PHP/header.php';
 // include '../PHP/check_login.php';
 
 // if (!isset($_SESSION['username'])) {
 //     header("Location: ../login.php");
 //     exit();
 // }
-$products = $pdo->query("SELECT * FROM product WHERE id_catalog = 1")->fetchAll(PDO::FETCH_ASSOC);
+$products = $pdo->query("SELECT * FROM product WHERE id_catalog = 2")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -160,5 +160,4 @@ $products = $pdo->query("SELECT * FROM product WHERE id_catalog = 1")->fetchAll(
 
 
 
-
-<?php include '../PHP/footer.php'; ?>
+<?php include './PHP/footer.php'; ?>

@@ -1,13 +1,13 @@
 <?php
-include '../PHP/conn.php';
-require '../PHP/header.php';
+include './conn.php';
+require './PHP/header.php';
 // include '../PHP/check_login.php';
 
 // if (!isset($_SESSION['username'])) {
 //     header("Location: ../login.php");
 //     exit();
 // }
-$products = $pdo->query("SELECT * FROM product WHERE id_catalog = 2")->fetchAll(PDO::FETCH_ASSOC);
+$products = $pdo->query("SELECT * FROM product WHERE id_catalog = 1")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
@@ -140,20 +140,6 @@ $products = $pdo->query("SELECT * FROM product WHERE id_catalog = 2")->fetchAll(
                 $('#successModal').modal('hide');
             }, 1500);
         }
-
-        // Lưu thông tin sản phẩm vào Local Storage
-        // var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-        // cartItems.push(info);
-        // localStorage.setItem("cartItems", JSON.stringify(cartItems));
-
-        // console.log(cartItems);
-        // // Hiển thị modal
-        // $('#my-modal').modal('show');
-
-        // // Ẩn modal
-        // setTimeout(function() {
-        //     $('#my-modal').modal('hide');
-        // }, 1500);
     }
 </script>
 
@@ -161,4 +147,4 @@ $products = $pdo->query("SELECT * FROM product WHERE id_catalog = 2")->fetchAll(
 
 
 
-<?php include '../PHP/footer.php'; ?>
+<?php include './PHP/footer.php'; ?>

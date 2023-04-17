@@ -1,6 +1,6 @@
 <?php
-include '../PHP/conn.php';
-require '../PHP/header.php';
+include './conn.php';
+require './PHP/header.php';
 
 // Kiểm tra xem người dùng đã ấn nút đăng ký hay chưa
 if (isset($_POST['register'])) {
@@ -61,5 +61,4 @@ if (isset($_POST['register'])) {
 </form>
 
 
-
-<?php include '../PHP/footer.php'; ?>
+<?php include './PHP/footer.php'; ?>

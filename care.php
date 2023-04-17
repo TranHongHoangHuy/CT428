@@ -1,6 +1,6 @@
 <?php
-include '../PHP/conn.php';
-require '../PHP/header.php';
+include './conn.php';
+require './PHP/header.php';
 
 ?>
 
@@ -42,4 +42,4 @@ require '../PHP/header.php';
 
 
 
-<?php include '../PHP/footer.php'; ?>
+<?php include './PHP/footer.php'; ?>

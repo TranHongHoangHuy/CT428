@@ -34,14 +34,14 @@
     <script language="javascript" src="../JS/index.js"></script>
     <header>
         <div class="head-name">
-            <a href="#">BotZone</a>
+            <a href="../index.php">BotZone</a>
         </div>
         <div class="head-menu">
             <ul>
-                <li><a href="../PHP/index.php">Mac</a></li>
-                <li><a href="music.html">Âm thanh</a></li>
-                <li><a href="../PHP/index2.php">Phụ kiện</a></li>
-                <li><a href="../PHP/care.php">BotCare</a></li>
+                <li><a href="../index.php">Mac</a></li>
+                <li><a href="#">Âm thanh</a></li>
+                <li><a href="../phukien.php">Phụ kiện</a></li>
+                <li><a href="../care.php">BotCare</a></li>
                 <li><a href="#">About</a></li>
             </ul>
         </div>
@@ -52,11 +52,11 @@
                 if (isset($_SESSION['username'])) { // Kiểm tra session
                     echo '<li><a href="../PHP/logout.php"><i class="fa-solid fa-sign-out"></i></a></li>';
                 } else {
-                    echo '<li><a href="../PHP/login.php"><i class="fa-solid fa-user"></i></a></li>';
+                    echo '<li><a href="../login.php"><i class="fa-solid fa-user"></i></a></li>';
                 }
                 ?>
                 <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href="../PHP/shopping.php"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
+                <li><a href="../shopping.php"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
             </ul>
         </div>
     </header>
