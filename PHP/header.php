@@ -32,7 +32,49 @@
 
 <body>
     <script language="javascript" src="../JS/index.js"></script>
-    <header>
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.php"><img src="../ASSETS/IMG/Senza-titolo-1.png" height="50" alt="">MacShop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../index.php">Mac</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../phukien.php">Phụ kiện</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../care.php">Bảo hành</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="../about.php">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <?php
+                    session_start();
+                    if (isset($_SESSION['username'])) { // Kiểm tra session
+                        echo '<li class="nav-item mx-2">
+                                <a class="nav-link" href="../PHP/logout.php"><i class="fa-solid fa-sign-out"></i></a></li>';
+                    } else {
+                        echo '<li class="nav-item mx-2">
+                                <a class="nav-link" href="../login.php"><i class="fa-solid fa-user"></i></a></li>';
+                    }
+                    ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../shopping.php"><i class="fa-solid fa-cart-shopping"></i></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- <header>
         <div class="head-name">
             <a href="../index.php">BotZone</a>
         </div>
@@ -59,5 +101,5 @@
                 <li><a href="../shopping.php"><i class="fa-solid fa-cart-shopping"></i></i></a></li>
             </ul>
         </div>
-    </header>
+    </header> -->
     <button id="scroll-to-top"><i class="fa-solid fa-arrow-up"></i></button>

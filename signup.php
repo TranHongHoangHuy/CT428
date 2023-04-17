@@ -60,5 +60,7 @@ if (isset($_POST['register'])) {
     </div>
 </form>
 
-
+<script>
+    document.title = "Đăng ký";
+</script>
 <?php include './PHP/footer.php'; ?>

@@ -112,34 +112,45 @@ $products = $pdo->query("SELECT * FROM product WHERE id_catalog = 1")->fetchAll(
 
         var info = [src, title, body, price];
 
-
-        // Kiểm tra trùng lặp
+        //thêm vào localStorage
         var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-        var isDuplicate = false;
-        for (var i = 0; i < cartItems.length; i++) {
-            if (JSON.stringify(cartItems[i]) === JSON.stringify(info)) {
-                isDuplicate = true;
-                break;
-            }
-        }
-        if (isDuplicate) {
-            $('#alertModal').modal('show');
+        cartItems.push(info);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        //Hiển thị modal
+        $('#successModal').modal('show');
 
-            // Ẩn modal
-            setTimeout(function() {
-                $('#alertModal').modal('hide');
-            }, 1500);
-        } else {
-            // Thêm vào Local Storage
-            cartItems.push(info);
-            localStorage.setItem("cartItems", JSON.stringify(cartItems));
-            $('#successModal').modal('show');
+        // Ẩn modal
+        setTimeout(function() {
+            $('#successModal').modal('hide');
+        }, 1500);
 
-            // Ẩn modal
-            setTimeout(function() {
-                $('#successModal').modal('hide');
-            }, 1500);
-        }
+        // // Kiểm tra trùng lặp
+        // var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        // var isDuplicate = false;
+        // for (var i = 0; i < cartItems.length; i++) {
+        //     if (JSON.stringify(cartItems[i]) === JSON.stringify(info)) {
+        //         isDuplicate = true;
+        //         break;
+        //     }
+        // }
+        // if (isDuplicate) {
+        //     $('#alertModal').modal('show');
+
+        //     // Ẩn modal
+        //     setTimeout(function() {
+        //         $('#alertModal').modal('hide');
+        //     }, 1500);
+        // } else {
+        //     // Thêm vào Local Storage
+        //     cartItems.push(info);
+        //     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        //     $('#successModal').modal('show');
+
+        //     // Ẩn modal
+        //     setTimeout(function() {
+        //         $('#successModal').modal('hide');
+        //     }, 1500);
+        // }
     }
 </script>
 

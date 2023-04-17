@@ -40,6 +40,8 @@ require './PHP/header.php';
     </div>
 </div>
 
-
+<script>
+    document.title = "Bảo hành";
+</script>
 
 <?php include './PHP/footer.php'; ?>

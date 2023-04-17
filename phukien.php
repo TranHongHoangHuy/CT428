@@ -97,6 +97,7 @@ $products = $pdo->query("SELECT * FROM product WHERE id_catalog = 2")->fetchAll(
 </main>
 
 <script>
+    document.title = "Phụ kiện";
     //Get product infomation
     var products = [];
 

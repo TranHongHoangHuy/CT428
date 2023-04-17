@@ -115,6 +115,8 @@ if (isset($_POST['submit'])) {
 </style>
 
 <script>
+    document.title = "Giỏ hàng";
+
     function loadCart() {
         var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
         var cartTable = document.querySelector("#cart-table tbody");

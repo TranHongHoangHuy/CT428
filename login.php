@@ -47,5 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </form>
-
+<script>
+    document.title = "Đăng nhập";
+</script>
 <?php include './PHP/footer.php'; ?>
