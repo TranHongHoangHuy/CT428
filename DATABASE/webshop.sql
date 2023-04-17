@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2023 at 05:17 PM
+-- Generation Time: Apr 17, 2023 at 06:11 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `username` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `name`, `username`, `password`) VALUES
+(1, 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -65,6 +72,130 @@ CREATE TABLE `img_info` (
   `id_product` int(32) NOT NULL,
   `url_info` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `img_info`
+--
+
+INSERT INTO `img_info` (`id_info`, `id_product`, `url_info`) VALUES
+(1, 5, 'https://cdn.tgdd.vn/Products/Images/44/282827/s16/macbook-air-m2-2022-8-core-gpu-021122-101441.jpg'),
+(2, 3, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-2.jpg'),
+(3, 3, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-1.jpg'),
+(4, 3, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-3.jpg'),
+(5, 3, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-4.jpg'),
+(6, 5, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-2.jpg'),
+(7, 5, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-3.jpg'),
+(8, 5, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-4.jpg'),
+(9, 5, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-7.jpg'),
+(10, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-1.jpg'),
+(11, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-2.jpg'),
+(12, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-3.jpg'),
+(13, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-4.jpg'),
+(14, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-5.jpg'),
+(15, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-a.jpg'),
+(16, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-6.JPG'),
+(17, 8, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-7.JPG'),
+(18, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053846.jpg'),
+(19, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053847.jpg'),
+(20, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053847-1.jpg'),
+(21, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053848.jpg'),
+(22, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053849.jpg'),
+(23, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053849-1.jpg'),
+(24, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053850.jpg'),
+(25, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053850-1.jpg'),
+(26, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053851.jpg'),
+(27, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053852.jpg'),
+(28, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053852-1.jpg'),
+(29, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053854.jpg'),
+(30, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053854-1.jpg'),
+(31, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053856.jpg'),
+(32, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053857.jpg'),
+(33, 11, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053858.jpg'),
+(34, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-1.jpg'),
+(35, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-2.jpg'),
+(36, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-3.jpg'),
+(37, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-4.jpg'),
+(38, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-5.jpg'),
+(39, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-6.jpg'),
+(40, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-7.jpg'),
+(41, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-8.jpg'),
+(42, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-9.jpg'),
+(43, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-10.jpg'),
+(44, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-11.jpg'),
+(45, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-12.jpg'),
+(46, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-13.jpg'),
+(47, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-14.jpg'),
+(48, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-15.jpg'),
+(49, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-16.jpg'),
+(50, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-17.jpg'),
+(51, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-18.jpg'),
+(52, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-19.jpg'),
+(53, 16, 'https://cdn.tgdd.vn/Products/Images/44/231255/s16/apple-macbook-pro-2020-z11c-s-20.jpg'),
+(54, 4, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-2.jpg'),
+(55, 4, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-1.jpg'),
+(56, 4, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-3.jpg'),
+(57, 4, 'https://cdn.tgdd.vn/Products/Images/44/302149/s16/macbook-pro-16-inch-m2-pro-desktop-4.jpg'),
+(58, 6, 'https://cdn.tgdd.vn/Products/Images/44/282827/s16/macbook-air-m2-2022-8-core-gpu-021122-101441.jpg'),
+(59, 6, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-2.jpg'),
+(60, 6, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-3.jpg'),
+(61, 6, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-4.jpg'),
+(62, 6, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-7.jpg'),
+(63, 7, 'https://cdn.tgdd.vn/Products/Images/44/282827/s16/macbook-air-m2-2022-8-core-gpu-021122-101441.jpg'),
+(64, 7, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-2.jpg'),
+(65, 7, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-3.jpg'),
+(66, 7, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-4.jpg'),
+(67, 7, 'https://cdn.tgdd.vn/Products/Images/44/289441/s16/apple-macbook-air-m2-2022-16gb-desktop-7.jpg'),
+(68, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-1.jpg'),
+(69, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-2.jpg'),
+(70, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-3.jpg'),
+(71, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-4.jpg'),
+(72, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-5.jpg'),
+(73, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-a.jpg'),
+(74, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-6.JPG'),
+(75, 9, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-7.JPG'),
+(76, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-1.jpg'),
+(77, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-2.jpg'),
+(78, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-3.jpg'),
+(79, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-4.jpg'),
+(80, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-5.jpg'),
+(81, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-a.jpg'),
+(82, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-6.JPG'),
+(83, 10, 'https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/Uploads/images/2015/Tin-Tuc/BaoPK/ThinCharge/macbook-pro-m2-2022-13-inch-7.JPG'),
+(84, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053846.jpg'),
+(85, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053847.jpg'),
+(86, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053847-1.jpg'),
+(87, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053848.jpg'),
+(88, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053849.jpg'),
+(89, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053849-1.jpg'),
+(90, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053850.jpg'),
+(91, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053850-1.jpg'),
+(92, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053851.jpg'),
+(93, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053852.jpg'),
+(94, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053852-1.jpg'),
+(95, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053854.jpg'),
+(96, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053854-1.jpg'),
+(97, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053856.jpg'),
+(98, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053857.jpg'),
+(99, 17, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053858.jpg'),
+(100, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053846.jpg'),
+(101, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053847.jpg'),
+(102, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053847-1.jpg'),
+(103, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053848.jpg'),
+(104, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053849.jpg'),
+(105, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053849-1.jpg'),
+(106, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053850.jpg'),
+(107, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053850-1.jpg'),
+(108, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053851.jpg'),
+(109, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053852.jpg'),
+(110, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053852-1.jpg'),
+(111, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053854.jpg'),
+(112, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053854-1.jpg'),
+(113, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053856.jpg'),
+(114, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053857.jpg'),
+(115, 18, 'https://cdn.tgdd.vn/Products/Images/44/243952/s16/apple-macbook-air-m1-2020-z12a00050-121021-053858.jpg'),
+(116, 23, 'https://cdn.tgdd.vn/Products/Images/12498/304963/s16/micro-co-day-shure-mv88-video-kit-3-2.jpg'),
+(117, 23, 'https://cdn.tgdd.vn/Products/Images/12498/304963/s16/micro-co-day-shure-mv88-video-kit-4-2.jpg'),
+(118, 23, 'https://cdn.tgdd.vn/Products/Images/12498/304963/s16/micro-co-day-shure-mv88-video-kit-2-1.jpg');
 
 -- --------------------------------------------------------
 
@@ -272,10 +403,7 @@ INSERT INTO `img_list` (`id_img`, `id_product`, `url`) VALUES
 (187, 27, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/7923/251694/s16/1-650x650.jpeg'),
 (188, 28, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/284275/s16/adapter-sac-apple-type-c-35w-thumb-1-650x650.png'),
 (189, 28, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/284275/s16/adapter-sac-apple-type-c-35w-2-3-650x650.jpg'),
-(190, 28, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/284275/s16/adapter-sac-apple-type-c-35w-3-650x650.jpg'),
-(191, 29, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/58/158724/s16/123-650x650.png'),
-(192, 29, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/58/158724/s16/cap-type-c-type-c-2m-apple-mll82-trang-158724-2-650x650.jpg'),
-(193, 29, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/58/158724/s16/cap-type-c-type-c-2m-apple-mll82-trang-158724-3-650x650.jpg');
+(190, 28, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/284275/s16/adapter-sac-apple-type-c-35w-3-650x650.jpg');
 
 -- --------------------------------------------------------
 
@@ -303,6 +431,17 @@ CREATE TABLE `orders` (
   `dateCreate` date NOT NULL,
   `status` varchar(255) NOT NULL,
   `id_user` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ordertemp`
+--
+
+CREATE TABLE `ordertemp` (
+  `id` int(32) NOT NULL,
+  `id_product` int(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -352,8 +491,7 @@ INSERT INTO `product` (`id_product`, `id_catalog`, `productName`, `productOption
 (25, 2, 'Magic Keyboard', 'Thường', '2230000.0', 1, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/1882/251881/s16/magic-keyboard-thumb-650x650.png', 'Magic Keyboard đem lại trải nghiệm gõ phím thoải mái và chính xác ấn tượng. Bàn phím còn có thể kết nối không dây và sạc lại được, với thời lượng pin dài và bàn phím hoạt động trong một tháng hoặc lâu hơn sau mỗi lần sạc.1 Bàn phím tự động kết nối với Mac, để bạn có thể làm việc ngay lập tức. Ngoài ra, bàn phím còn có cáp bện chuyển đổi từ USB-C sang Lightning để bạn kết nối với cổng USB-C trên Mac để sạc.'),
 (26, 2, 'Magic Mouse', 'Màu: Trắng', '1990000.0', 1, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/86/251787/s16/1-650x650.png', 'Magic Mouse có thể kết nối không dây và sạc lại được, với phần đế được thiết kế tối ưu giúp di chuyển dễ dàng trên mặt bàn. Bề mặt Multi-Touch cho phép bạn thực hiện các thao tác đơn giản như vuốt giữa các trang web và cuộn qua lại giữa các tài liệu.\r\n\r\nThời lượng pin dài ấn tượng giúp Magic Mouse hoạt động trong khoảng thời gian một tháng hoặc lâu hơn sau mỗi lần sạc. Bạn có thể sử dụng ngay khi vừa khui khỏi hộp và chuột sẽ tự động kết nối với Mac. Magic Mouse có cáp bện chuyển đổi từ USB-C sang Lightning để bạn kết nối với cổng USB-C trên Mac để sạc.'),
 (27, 2, 'Bao da MacBook Pro 13 inch', 'Màu: Xanh Navy', '4120000.0', 1, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/7923/251694/s16/bao-da-macbook-pro-13-inch-apple-mrql2-thumb-2-650x650.png', 'Được sản xuất bởi Apple, bao da Macbook Pro 13 inch này được sản xuất thủ công từ chất liệu da cao cấp đến từ Châu Âu. Bao da được trang bị một lớp lót làm từ sợi siêu mỏng cực kì mềm mại giúp bảo vệ tốt cho MacBook Air hoặc MacBook Pro của bạn ở bất cứ nơi đâu.'),
-(28, 2, 'Adapter sạc Apple 2 cổng USB-C 35W', 'Màu: Trắng', '1180000.0', 1, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/284275/s16/adapter-sac-apple-type-c-35w-thumb-1-650x650.png', 'Adapter sạc Apple Type C 35W cho phép bạn sạc hai thiết bị cùng một lúc, cho dù bạn đang ở nhà, ở văn phòng hay đang di chuyển. Kích thước nhỏ gọn giúp bạn dễ dàng đóng gói và cất giữ. Apple khuyên bạn nên sử dụng nó với MacBook Air. Bạn cũng có thể sử dụng nó với iPhone, iPad, Apple Watch và AirPods.'),
-(29, 2, 'Cáp sạc USB-C 2m', '2m', '620000.0', 1, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/58/158724/s16/123-650x650.png', 'Cáp sạc dài 2m này với cổng kết nối USB-C ở cả hai đầu là phụ kiện lý tưởng để sạc, đồng bộ hóa và chuyển dữ liệu giữa các thiết bị USB-C. Kết nối với củ sạc USB-C với bộ sạc USB-C tương thích để sạc thiết bị từ ổ cắm điện trên tường và tận dụng tính năng sạc nhanh. Không bán kèm Bộ Sạc USB-C.');
+(28, 2, 'Adapter sạc Apple 2 cổng USB-C 35W', 'Màu: Trắng', '1180000.0', 1, 'https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/284275/s16/adapter-sac-apple-type-c-35w-thumb-1-650x650.png', 'Adapter sạc Apple Type C 35W cho phép bạn sạc hai thiết bị cùng một lúc, cho dù bạn đang ở nhà, ở văn phòng hay đang di chuyển. Kích thước nhỏ gọn giúp bạn dễ dàng đóng gói và cất giữ. Apple khuyên bạn nên sử dụng nó với MacBook Air. Bạn cũng có thể sử dụng nó với iPhone, iPad, Apple Watch và AirPods.');
 
 -- --------------------------------------------------------
 
@@ -366,16 +504,20 @@ CREATE TABLE `user` (
   `username` varchar(255) NOT NULL,
   `password` varchar(20) NOT NULL,
   `phone` varchar(32) DEFAULT NULL,
-  `address` varchar(32) DEFAULT NULL
+  `address` varchar(32) DEFAULT NULL,
+  `name` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `username`, `password`, `phone`, `address`) VALUES
-(1, 'Hoanghuy', '061199', '', NULL),
-(11, 'b1702724', '061199', '', NULL);
+INSERT INTO `user` (`id_user`, `username`, `password`, `phone`, `address`, `name`) VALUES
+(1, 'Hoanghuy', '061199', '0999999888', 'VietNam', 'Hoàng Huy'),
+(2, 'b1702724', '061199', '0222888999', 'DongLao', 'Tấn Thành'),
+(3, 'haiduong', '999999', '0988877665', 'CaMau', 'Quốc Thanh'),
+(4, 'khacduy', '999999', '0234445334', '102C9 Nguyen Hong Street Hanoi', 'Tuấn Kiệt'),
+(5, 'truonggiang', '999999', '08. 62554155', 'C13/8 ap 3, xa Tan Quy Tay Binh', 'Phú Thịnh');
 
 --
 -- Indexes for dumped tables
@@ -398,7 +540,7 @@ ALTER TABLE `catalog`
 --
 ALTER TABLE `img_info`
   ADD PRIMARY KEY (`id_info`),
-  ADD KEY `id_product` (`id_product`);
+  ADD KEY `fk_img_info_id_product` (`id_product`);
 
 --
 -- Indexes for table `img_list`
@@ -420,6 +562,13 @@ ALTER TABLE `orderdetail`
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id_order`),
   ADD KEY `id_user_fk` (`id_user`);
+
+--
+-- Indexes for table `ordertemp`
+--
+ALTER TABLE `ordertemp`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_product` (`id_product`);
 
 --
 -- Indexes for table `product`
@@ -448,7 +597,7 @@ ALTER TABLE `catalog`
 -- AUTO_INCREMENT for table `img_info`
 --
 ALTER TABLE `img_info`
-  MODIFY `id_info` int(32) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_info` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT for table `img_list`
@@ -463,6 +612,12 @@ ALTER TABLE `orders`
   MODIFY `id_order` int(32) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `ordertemp`
+--
+ALTER TABLE `ordertemp`
+  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -472,7 +627,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_user` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
@@ -482,6 +637,7 @@ ALTER TABLE `user`
 -- Constraints for table `img_info`
 --
 ALTER TABLE `img_info`
+  ADD CONSTRAINT `fk_img_info_id_product` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`) ON DELETE CASCADE,
   ADD CONSTRAINT `img_info_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`);
 
 --
@@ -504,6 +660,12 @@ ALTER TABLE `orderdetail`
 ALTER TABLE `orders`
   ADD CONSTRAINT `id_user_fk` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`);
+
+--
+-- Constraints for table `ordertemp`
+--
+ALTER TABLE `ordertemp`
+  ADD CONSTRAINT `ordertemp_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`);
 
 --
 -- Constraints for table `product`
