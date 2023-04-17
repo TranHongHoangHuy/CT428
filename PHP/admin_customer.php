@@ -1,7 +1,7 @@
 <?php
 include '../conn.php';
 
-$products = $pdo->query("SELECT * FROM product")->fetchAll(PDO::FETCH_ASSOC);
+$customers = $pdo->query("SELECT * FROM user")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <?php
@@ -10,37 +10,31 @@ require './admin_header.php'
 
 <main style="min-height: 500px;">
     <div class="container mt-5 mb-5">
-        <h1 class="text-center"> Thông tin sản phẩm</h1>
-        <a href="./add_product.php" class="btn btn-primary" style="margin-bottom: 30px;">
-            <i class="fa fa-plus"></i> Thêm sản phẩm</a>
+        <h1 class="text-center"> Thông tin khách hàng</h1>
+        <a href="./add_user.php" class="btn btn-primary" style="margin-bottom: 30px;">
+            <i class="fa fa-plus"></i> Thêm khách hàng</a>
         <table id="example" class="table table-striped" style="width:100%">
             <thead>
                 <tr>
-                    <th>Ảnh</th>
                     <th>Tên</th>
-                    <th>Option</th>
-                    <th>Giá</th>
+                    <th>Địa chỉ</th>
+                    <th>Số điện thoại</th>
                     <th>Action</th>
+
+
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($products as $product) : ?>
+                <?php foreach ($customers as $customer) : ?>
                     <tr>
-                        <td><img src="<?php echo $product['image_link']; ?>" style="height: 100px;"></td>
-                        <td><?php echo $product['productName']; ?></td>
-                        <td><?php echo $product['productOption']; ?></td>
-                        <td><?php echo $product['price']; ?></td>
+                        <td><?php echo $customer['name']; ?></td>
+                        <td><?php echo $customer['address']; ?></td>
+                        <td><?php echo $customer['phone']; ?></td>
                         <td>
-                            <form method="post" action="delete_product.php">
-                                <input type="hidden" name="id_product" value="<?php echo $product['id_product']; ?>">
+                            <form method="post" action="delete_user.php">
+                                <input type="hidden" name="id_user" value="<?php echo $customer['id_user']; ?>">
                                 <button type="submit" class="btn btn-xs btn-danger" name="delete">
                                     <i alt="Delete" class="fa fa-trash"> Delete</i>
-                                </button>
-                            </form>
-                            <form method="post" action="show_product_detail.php">
-                                <input type="hidden" name="id_product" value="<?php echo $product['id_product']; ?>">
-                                <button type="submit" class="btn btn-xs btn-primary" name="detail">
-                                    <i alt="Delete" class="fa fa-circle-info"> detail</i>
                                 </button>
                             </form>
                         </td>
@@ -49,10 +43,9 @@ require './admin_header.php'
             </tbody>
             <tfoot>
                 <tr>
-                    <th>Ảnh</th>
                     <th>Tên</th>
-                    <th>Option</th>
-                    <th>Giá</th>
+                    <th>Địa chỉ</th>
+                    <th>Số điện thoại</th>
                     <th>Action</th>
                 </tr>
             </tfoot>

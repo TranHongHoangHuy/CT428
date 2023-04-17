@@ -8,7 +8,8 @@ if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $address = $_POST['address'];
-    $phone_number = $_POST['phone_number'];
+    $phone = $_POST['phone'];
+    $name = $_POST['name'];
 
     // Kiểm tra xem username đã được sử dụng hay chưa
     $stmt = $pdo->prepare('SELECT COUNT(*) FROM user WHERE username = ?');
@@ -19,8 +20,8 @@ if (isset($_POST['register'])) {
         echo 'Username already exists.';
     } else {
         // Thêm người dùng vào CSDL
-        $stmt = $pdo->prepare('INSERT INTO user (username, password, address, phone) VALUES (?, ?, ?, ?)');
-        $stmt->execute([$username, $password, $address, $phone_number]);
+        $stmt = $pdo->prepare('INSERT INTO user (username, password, phone, address, name) VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute([$username, $password, $phone, $address, $name]);
 
         // Đăng ký thành công, chuyển hướng đến trang đăng nhập
         header('Location: login.php');
@@ -37,6 +38,10 @@ if (isset($_POST['register'])) {
         <div class="card_lgi">
             <a class="card_lgi_login mt-2">Sign up</a>
             <div class="card_lgi_inputBox">
+                <input type="text" required="required" name="name" value="" id="name">
+                <span class="user">Name</span>
+            </div>
+            <div class="card_lgi_inputBox">
                 <input type="text" required="required" name="username" value="" id="username">
                 <span class="user">Username</span>
             </div>
@@ -47,13 +52,13 @@ if (isset($_POST['register'])) {
             </div>
 
             <div class="card_lgi_inputBox">
-                <input type="tel" required="required" pattern="[0-9]{10}" name="phone_number" value="" id="phone_number">
+                <input type="tel" required="required" pattern="[0-9]{10}" name="phone" value="" id="phone">
                 <span>Phone number</span>
             </div>
 
             <div class="card_lgi_inputBox">
                 <input type="text" required="required" name="address" value="" id="address">
-                <span>Addres</span>
+                <span>Address</span>
             </div>
             <button class="card_lgi_enter" type="submit" name="register" value="Register">Enter</button>
         </div>

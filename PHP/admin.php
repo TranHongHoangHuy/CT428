@@ -15,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($count > 0) {
     // Lưu session nếu thông tin đăng nhập đúng
-    $_SESSION['username'] = $username;
+    $_SESSION['admin'] = $username;
 
     // Chuyển hướng đến trang quan ly
-    header('Location: ../manager.php');
+    header('Location: ./manager.php');
     // exit;
   } else {
     // Hiển thị thông báo nếu thông tin đăng nhập sai
@@ -30,6 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="../ASSETS/CSS/style-admin.css">
 
 </head>
@@ -40,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
       <div class="left">
         <div class="login">Đăng nhập</div>
-        <div class="eula">Trang quản lý của webshop<br>admin<br>admin</div>
+        <div class="eula">Trang quản lý của webshop<br>admin<br></div>
       </div>
       <div class="right">
         <svg viewBox="0 0 320 300">
@@ -61,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="psw"><b>Mật khẩu</b></label>
             <input type="password" placeholder="Nhập mật khẩu" name="password" required>
 
-            <button type="submit">Đăng nhập</button>
+            <button class="btn btn-outline-primary mt-2" type="submit" style="height: 50px;">Đăng nhập</button>
 
           </form>
         </div>

@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $username;
 
         // Chuyển hướng đến trang index
-        header('Location: ../index.php');
-        // exit;
+        header('Location: ./index.php');
+        exit;
     } else {
         // Hiển thị thông báo nếu thông tin đăng nhập sai
         echo "<script>alert('Bạn đã nhập sai thông tin đăng nhập');</script>";
