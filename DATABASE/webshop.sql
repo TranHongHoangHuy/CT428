@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2023 at 06:11 PM
+-- Generation Time: Apr 18, 2023 at 10:01 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -496,6 +496,42 @@ INSERT INTO `product` (`id_product`, `id_catalog`, `productName`, `productOption
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `repair`
+--
+
+CREATE TABLE `repair` (
+  `id_repair` int(32) NOT NULL,
+  `id_product` int(32) NOT NULL,
+  `repair_type` varchar(32) NOT NULL,
+  `price` decimal(15,1) NOT NULL DEFAULT 0.0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `repair`
+--
+
+INSERT INTO `repair` (`id_repair`, `id_product`, `repair_type`, `price`) VALUES
+(1, 3, 'Pin', '6000000.0'),
+(2, 4, 'Pin', '6000000.0'),
+(3, 5, 'Pin', '5400000.0'),
+(4, 6, 'Pin', '5400000.0'),
+(5, 7, 'Pin', '5400000.0'),
+(6, 8, 'Pin', '5500000.0'),
+(7, 11, 'Pin', '5000000.0'),
+(8, 12, 'Pin', '5800000.0'),
+(9, 17, 'Pin', '5700000.0'),
+(10, 16, 'Pin', '4600000.0'),
+(11, 8, 'Màn hình', '10000000.0'),
+(12, 14, 'Màn hình', '20000000.0'),
+(13, 16, 'Màn hình', '13200000.0'),
+(14, 3, 'Bàn phím', '9800000.0'),
+(15, 5, 'Bàn phím', '8900000.0'),
+(16, 8, 'Bàn phím', '12000000.0'),
+(17, 13, 'Bàn phím', '8900000.0');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -578,6 +614,13 @@ ALTER TABLE `product`
   ADD KEY `product_catalog_fk` (`id_catalog`);
 
 --
+-- Indexes for table `repair`
+--
+ALTER TABLE `repair`
+  ADD PRIMARY KEY (`id_repair`),
+  ADD KEY `id_product` (`id_product`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -622,6 +665,12 @@ ALTER TABLE `ordertemp`
 --
 ALTER TABLE `product`
   MODIFY `id_product` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `repair`
+--
+ALTER TABLE `repair`
+  MODIFY `id_repair` int(32) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -673,6 +722,12 @@ ALTER TABLE `ordertemp`
 ALTER TABLE `product`
   ADD CONSTRAINT `product_catalog_fk` FOREIGN KEY (`id_catalog`) REFERENCES `catalog` (`id_catalog`),
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_catalog`) REFERENCES `catalog` (`id_catalog`);
+
+--
+-- Constraints for table `repair`
+--
+ALTER TABLE `repair`
+  ADD CONSTRAINT `repair_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -8,7 +8,8 @@ if (isset($_POST['submit'])) {
     $username = $_POST['name'];
     $password = $_POST['phone'];
     $address = $_POST['address'];
-    $phone_number = $_POST['phone'];
+    $phone = $_POST['phone'];
+    $name = $_POST['name'];
 
     // Kiểm tra xem username đã được sử dụng hay chưa
     $stmt = $pdo->prepare('SELECT COUNT(*) FROM user WHERE username = ?');
@@ -16,28 +17,20 @@ if (isset($_POST['submit'])) {
 
     if ($stmt->fetchColumn() > 0) {
         // Username đã được sử dụng, đưa thông tin sản phẩm vào bảng order
-        echo 'Username already exists.';
+        echo "<p class='alert alert-success text-center'>Bạn đã mua hàng thành công!!! Macshop đã ghi nhận và sẽ sớm liên hệ với bạn</p>";
+        echo '<script>
+        localStorage.clear();</script>';
     } else {
         // Thêm người dùng vào CSDL
-        $stmt = $pdo->prepare('INSERT INTO user (username, password, address, phone) VALUES (?, ?, ?, ?)');
-        $stmt->execute([$username, $password, $address, $phone_number]);
+        $stmt = $pdo->prepare('INSERT INTO user (username, password, phone, address, name) VALUES (?, ?, ?, ?, ?)');
+        $stmt->execute([$username, $password, $phone, $address, $name]);
 
         //đưa thông tin sản phẩm vào bảng order
 
         // ấn submit thành công, hiện modal
-        echo '<div class="modal" id="successModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Thông báo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Bạn đã đặt hàng thành công
-                </div>
-            </div>
-        </div>
-    </div>';
+        echo "<p class='alert alert-success text-center'>Bạn đã mua hàng thành công!!! Macshop đã ghi nhận và sẽ sớm liên hệ với bạn</p>";
+        echo '<script>
+    localStorage.clear();</script>';
     }
 }
 
