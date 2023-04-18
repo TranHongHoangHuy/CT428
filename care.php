@@ -2,6 +2,11 @@
 include './conn.php';
 require './PHP/header.php';
 
+$products = $pdo->query("SELECT repair.repair_type, repair.price, product.productName 
+FROM repair 
+JOIN product ON repair.id_product = product.id_product 
+WHERE product.id_catalog = 1;
+")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div class="container">
@@ -18,21 +23,13 @@ require './PHP/header.php';
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Màn hình</td>
-                        <td>MacBook Air M2 2022</td>
-                        <td>10.600.000₫</td>
-                    </tr>
-                    <tr>
-                        <td>Màn hình</td>
-                        <td>MacBook Air M2 2022</td>
-                        <td>11.800.000₫</td>
-                    </tr>
-                    <tr>
-                        <td>màn hình</td>
-                        <td>MacBook Pro 13 Inch M2 2022</td>
-                        <td>13.000.000₫</td>
-                    </tr>
+                    <?php foreach ($products as $product) : ?>
+                        <tr>
+                            <td><?php echo $product['repair_type']; ?></td>
+                            <td><?php echo $product['productName']; ?></td>
+                            <td><?php echo $product['price']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
 
