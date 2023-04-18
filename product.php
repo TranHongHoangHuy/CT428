@@ -54,11 +54,6 @@ $img_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 </div>
                 <div class="col-lg-6 product_detail_b">
-                    <!-- <h1 class="name" style="color: #fff;">
-                        Macbook air M1 2020 8 core GPU
-                    </h1>
-                    <h2 class="price">19.790.900đ</h2>
-                    <button class="btn btn-dark info">Ram 8GB-SSD 256 GB</button> -->
                     <h1 class="name" style="color: #fff;">
                         <?php echo $product['productName']; ?>
                     </h1>
@@ -82,7 +77,7 @@ $img_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <p>(*) Giá hoặc khuyến mãi không áp dụng trả góp lãi suất đặc biệt (0%, 0.5%, 1%)</p>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary"><strong>Mua hàng</strong></button>
+                    <button type="button" class="btn btn-primary" onclick="addToCart()"><strong>Mua hàng</strong></button>
                     <div class="btn_last">
                         <button type="button" class="btn btn-light"><strong>Trả góp qua công ty tài chính</strong></button>
                         <button type="button" class="btn btn-light"><strong>Trả góp qua thẻ</strong> </button>
@@ -127,8 +122,46 @@ $img_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thông báo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Sản phẩm đã được thêm vào giỏ hàng.
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 <script>
     document.title = "San pham";
+
+    function addToCart() {
+        var img = document.querySelector(".carousel-item.active img");
+        var src = img.getAttribute("src");
+
+        var title = document.querySelector(".name").textContent;
+        var body = document.querySelector(".info").textContent;
+
+        var price = document.querySelector(".price").textContent;
+
+        var info = [src, title, body, price];
+
+        var cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartItems.push(info);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        //Hiển thị modal
+        $('#successModal').modal('show');
+
+        // Ẩn modal
+        setTimeout(function() {
+            $('#successModal').modal('hide');
+        }, 1500);
+    }
 </script>
 <?php include './PHP/footer.php'; ?>

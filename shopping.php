@@ -179,6 +179,7 @@ if (isset($_POST['submit'])) {
             row.appendChild(bodyCell);
 
             var priceCell = document.createElement("td");
+            var price = parseFloat(product[3].replace(".", "").replace("đ", ""));
             priceCell.textContent = product[3];
             row.appendChild(priceCell);
 
@@ -197,23 +198,30 @@ if (isset($_POST['submit'])) {
 
             cartTable.appendChild(row);
 
-            total += parseFloat(product[3].replace("$", ""));
+            total += price;
         }
 
         var totalRow = document.createElement("tr");
         var totalCell = document.createElement("td");
         totalCell.colSpan = 3;
-        totalCell.textContent = "Total";
+        totalCell.textContent = "Tổng cộng( triệu đồng )";
         totalRow.appendChild(totalCell);
 
         var totalAmountCell = document.createElement("td");
-        totalAmountCell.textContent = "$" + total.toFixed(2);
+        totalAmountCell.textContent = formatMoney(total);
         totalAmountCell.id = "total-amount";
         totalRow.appendChild(totalAmountCell);
 
         cartTable.appendChild(totalRow);
     }
 
+    function formatMoney(amount) {
+        var formatter = new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        });
+        return formatter.format(amount);
+    }
 
 
 
@@ -222,19 +230,34 @@ if (isset($_POST['submit'])) {
         var total = 0;
         for (var i = 0; i < cartItems.length; i++) {
             var product = cartItems[i];
-            total += parseFloat(product[3].replace("$", ""));
+            // total += parseFloat(product[3].replace("$", ""));
+            total += parseFloat(product[3].replace(".", "").replace("đ", ""));
+
         }
-        document.querySelector("#total-amount").textContent = "$" + total.toFixed(2);
+        var totalFormatted = total.toLocaleString('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        });
+        document.querySelector("#total-amount").textContent = totalFormatted;
     }
+
 
     loadCart();
 
-    //after submit, show the modal and delete locaStorage
+    // after submit, show the modal and delete locaStorage
     $(document).ready(function() {
-        $('#successModal').modal('show');
+        var isButtonClicked = false;
 
-        // delete all localStorage
-        localStorage.clear();
+        // nếu nhấn vào nút mua hàng
+        $("button[name='submit']").click(function() {
+            isButtonClicked = true;
+        });
+
+        // hiển thị modal nếu isButtonClicked = true
+        if (isButtonClicked) {
+            $('#successModal').modal('show');
+            localStorage.clear();
+        }
     });
 </script>
 
