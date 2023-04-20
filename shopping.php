@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
     <h2>Thông tin mua hàng</h2>
 </div>
 <div class="container">
-    <form method="post" action="shopping.php">
+    <form method="post" action="shopping.php" id="shopping_form">
         <div class="form-row m-4" style="display: flex;">
             <div class="form-group col-md-6 pe-2">
                 <input type="text" id="name" name="name" class="form-control" placeholder="Tên">
@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
         </div>
 
         <div class="form-group m-4">
-            <textarea id="note" name="note" class="form-control" placeholder="Ghi chú"></textarea>
+            <textarea id="note" name="note" class="form-control" placeholder="Ghi chú (nếu có)"></textarea>
         </div>
         <div class="form-group m-4">
             <button type="submit" name="submit" class="btn btn-primary" style="width: 100%;">Mua hàng</button>
@@ -251,6 +251,50 @@ if (isset($_POST['submit'])) {
             $('#successModal').modal('show');
             localStorage.clear();
         }
+    });
+
+
+    //jquery validate
+    $(document).ready(function() {
+        $("#shopping_form").validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: {
+                    required: true,
+                    minlength: 10
+                },
+                address: "required"
+            },
+            messages: {
+                name: {
+                    required: "Bạn chưa nhập tên",
+                    minlength: "Tên phải có ít nhất 2 ký tự"
+                },
+                phone: {
+                    required: "Bạn chưa nhập số điện thoại",
+                    minlength: "Số điện thoại phải có ít nhất 10 số"
+                },
+                address: "Bạn chưa nhập địa chỉ"
+            },
+            errorElement: "div",
+            errorPlacement: function(error, element) {
+                error.addClass("invalid-feedback");
+                if (element.prop("type") === "checkbox") {
+                    error.insertAfter(element.siblings("label"));
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            highlight: function(element, errorClass, validClass) {
+                $(element).addClass("is-invalid").removeClass("is-valid");
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).addClass("is-valid").removeClass("is-invalid");
+            }
+        })
     });
 </script>
 
