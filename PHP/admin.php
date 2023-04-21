@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="left">
         <div class="login">Đăng nhập</div>
         <div class="eula">Trang quản lý của webshop<br>admin<br></div>
+        <div class="text-center"><a href="../index.php" style="text-decoration: none; ">Trở về trang chủ</a></div>
       </div>
       <div class="right">
         <svg viewBox="0 0 320 300">

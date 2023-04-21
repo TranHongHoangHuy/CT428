@@ -29,6 +29,14 @@ $img_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
 // );
 
 ?>
+
+<style>
+    .product-info-img img {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
 <main>
     <div class="top">
         <div class="container product">
