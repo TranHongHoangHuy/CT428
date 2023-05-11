@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2023 at 10:01 AM
+-- Generation Time: May 11, 2023 at 06:13 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -553,7 +553,10 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `phone`, `address`, `name
 (2, 'b1702724', '061199', '0222888999', 'DongLao', 'Tấn Thành'),
 (3, 'haiduong', '999999', '0988877665', 'CaMau', 'Quốc Thanh'),
 (4, 'khacduy', '999999', '0234445334', '102C9 Nguyen Hong Street Hanoi', 'Tuấn Kiệt'),
-(5, 'truonggiang', '999999', '08. 62554155', 'C13/8 ap 3, xa Tan Quy Tay Binh', 'Phú Thịnh');
+(5, 'truonggiang', '999999', '08. 62554155', 'C13/8 ap 3, xa Tan Quy Tay Binh', 'Phú Thịnh'),
+(28, '', '', '', '', ''),
+(29, 'Hoàng Huy', '0369859916', '0369859916', 'Tầm Vu', ''),
+(30, 'taothao', '2311231231', '2311231231', 'khongbiet', 'taothao');
 
 --
 -- Indexes for dumped tables
@@ -676,7 +679,7 @@ ALTER TABLE `repair`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_user` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Constraints for dumped tables
